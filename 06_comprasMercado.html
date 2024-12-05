@@ -10,11 +10,20 @@
     let lista = ["A", "E", 2, 4.8, "CINQUENTA", "Araquari", 80, 10, 3.2];
 
     //Processamento
-    soma = [];
-    for ( let item of lista)[
-        
-    ]
+    letras = [];
+    numeros = [];
+    soma = 0;
+    for ( let item of lista){
+        if ( item * 1 == item ){
+        soma = item + soma;
+        numeros.push(item);
+        }
+        else {
+        letras.push(item);
+        }
+    }
 
     //Saída
+    document.write(`O resultado: ${numeros.join(" + ")} = ${soma}.`);
 
 </script>
