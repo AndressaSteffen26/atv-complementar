@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //Problema: Cor Preferida
     /*
@@ -8,11 +9,20 @@
     */
 
     //Entrada
+    let cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
+    let coresPreferidas = [];
 
 
     //Processamento
+    for (let cor of cores) {
+        const resposta = prompt(`Você gosta da cor ${cor}? (sim/não)`);
+        if (resposta === "sim"){
+            coresPreferidas.push(cor);
+        }
+    }
 
 
     //Saída
+    document.write(`Cores preferidas: ${coresPreferidas.join(" , ")}. <br> Quantidade de cores preferidas: ${coresPreferidas.length}`);
 
 </script>

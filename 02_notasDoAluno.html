@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //Problema: Notas do Alunos
     /*
@@ -11,11 +12,15 @@
     const notasAluno = [7, 5, 9, 8];
 
     //Processamento
-    for ( let item of notasAluno){
-        
-    }
+    soma = 0;
 
+    for ( let item of notasAluno){
+        soma = item + soma;
+    }
+    notasAluno.sort((a,b) => a-b);
+    const media = soma / 4;
 
     //Saída
+    document.write(`A maior nota do aluno é : ${notasAluno[3]} <br> A menor nota do aluno é : ${notasAluno[0]} <br> A média obtida pelo aluno é : ${media.toFixed(1).replace(".",",")}`);
 
 </script>

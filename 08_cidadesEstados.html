@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <script>
     //Problema: Cidades e Estados
     /*
@@ -8,11 +9,27 @@
     */
 
     //Entrada
+    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+    let estados = [];
 
 
     //Processamento
-
+    for (let cidade of cidades) {
+        let estado = prompt(`A qual estado pertence a cidade ${cidade}?`);
+        if (!estado) {
+            alert("Estado inválido! Tente novamente.");
+        }
+        if (!estados[estado]) {
+            estados[estado] = [];
+        }
+        estados[estado].push(cidade);
+    }
+    let estadosOrdenados = Object.entries(estados).sort((a, b) => b[1].length - a[1].length);
 
     //Saída
+    document.write(`Estados e suas Cidades:<br>`);
+    for (let [estado, cidades] of estadosOrdenados) {
+        document.write(`${estado} (${cidades.length} cidades): ${cidades.join(", ")}<br>`);
+    }
 
 </script>
